@@ -1,0 +1,219 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.split {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #f5f6fa;
+  width: 40%;
+}
+
+.right {
+  right: 0;
+  background-color: #1c3b69;
+  box-shadow: -3px 0px 7px #a1a0a0;
+  width: 60%;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+form {solid #ffffff;}
+
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #cfcfcf;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+button, .btn-custom {
+  border-radius: 15px;
+  background-color: #f80d20;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.regform{
+    background-color: #FFFFFF;
+    width: 50%;
+    margin: auto;
+    font-family: century-gothic, sans-serif;
+    color: #000000;
+    padding: 20px 15px 20px 15px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #a1a0a0;
+    }
+button:hover {
+  opacity: 0.8;
+}
+
+.signupbtn {
+  width: auto;
+  margin: auto;
+  color: #0e697d;
+  padding: 10px 25px;
+  background-color: #ffffff;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 20px 0 5px 0;
+}
+
+img.avatar {
+  width: 25%;
+  border-radius: 50%;
+}
+
+.imgcontainer2 {
+  text-align: right;
+  margin: -85px 0 12px 0;
+}
+
+img.dog {
+  width: 45%;
+}
+
+.parcontant {
+  text-align: auto;
+  color: #FFFFFF;
+  font-family: century-gothic, sans-serif;
+  padding: 100px;
+  margin: 30px 0 -80px 0;
+  }
+
+.readmore {
+  width: 15%;
+  margin: 0px 0px 0px 400px;
+  padding: 10px 15px;
+  color: #FFFFFF;
+  background-color: #1c3b69;
+  border: 2px solid #cfcfcf;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: auto;
+  padding: 10px 10px;
+}
+
+.container2 {
+  margin: auto;
+  padding: 16px;
+  display: grid;
+  padding-top: 0px;
+}
+
+.container3 {
+  margin: auto;
+  padding: 10px;
+  display: grid;
+  padding-top: 0px;
+}
+span.psw {
+  float: right;
+  padding-top: 0px;
+}
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="split left">
+<form method="POST">
+<div class="imgcontainer">
+    <img src="{% static 'img/logo.png' %}" alt="Avatar" class="avatar">
+  </div>
+<div class="regform">
+  <div class="container">
+    <label for="uname"><b>Email</b></label>
+   <input type="text" placeholder="Enter Email" name="uname" required>
+
+   <label for="psw"><b>Password</b></label>
+   <input type="password" placeholder="Enter Password" name="psw" required>
+       
+   <!-- <button type="submit"><b>Login</b></button> -->
+   {% if user_status == "False" %}
+   <p>Incorrect Email or Password</p>
+   {%endif%}
+   <input type="submit"class="btn-custom" name="formsubmit" value="Login">
+</div>
+<div class="container3">
+    <label>
+     <input type="checkbox" checked="checked" name="remember"> Remember me
+    <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+</label>
+  </div>
+  <div class="container2">
+ <h5 align=center>
+   <hr>
+   <br>
+   
+  <a href="{% url 'signup' %}">
+  <button type="button" class="signupbtn"><b><u>Sign Up</u></b></button>
+ </a>
+</h5>
+   
+  </div>
+</div>
+</form>
+</div>
+<div class="split right">
+<div class="parcontant">
+    <h2><u>Animal Matters</u></h2>
+  <p>Our mission is to rescue and treat owner-less street animals of India who have become ill or injured, and through their rescue inspire the community to care for the lives of all animals.
+Throughout India, animals including dogs, cows, cats, and donkeys live on the streets. Most cities don't have hospitals for owner-less animals, which means injured or ill animals often die from treatable conditions.</p>
+  </div>
+  
+<div class="container3">
+  <a href="{% url 'logaboutus' %}">
+<button type="button" class="readmore">Read More ...</button>
+</a>
+</div>
+<br>
+<br>
+<br>
+<div class="imgcontainer2">
+    <img src="{% static 'img/dog.png' %}" alt="Dog1" class="dog">
+  </div>
+</div>
+</body>
+</html>x
