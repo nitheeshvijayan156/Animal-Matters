@@ -1,0 +1,1 @@
+The title of our app is “Animal Matters.” The main idea of our app is to provide spinal support for animal safety in India. As of now, India does not have a dedicated support scheme for animal safety. So as a preliminary step the app provides every citizen in our country to be a part of this initiation.
